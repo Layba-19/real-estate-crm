@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div style="display:flex; gap:20px;">
+
+    <div style="border:1px solid black; padding:20px;">
+        <h3>Total Leads</h3>
+        <h1>{{ total_leads }}</h1>
+    </div>
+
+    <div style="border:1px solid black; padding:20px;">
+        <h3>Total Properties</h3>
+        <h1>{{ total_properties }}</h1>
+    </div>
+
+</div>
+
+<br>
+
+<a href="/leads/">Go to Leads</a><br>
+<a href="/properties/">Go to Properties</a>
+
+{% endblock %}

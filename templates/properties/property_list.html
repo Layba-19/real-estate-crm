@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Properties</h2>
+
+<a href="/properties/add/">Add Property</a>
+
+<br><br>
+
+<form method="GET">
+    <input type="text" name="search" placeholder="Search by location">
+
+    <select name="property_type">
+        <option value="">All Types</option>
+        <option value="Residential">Residential</option>
+        <option value="Commercial">Commercial</option>
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<form method="GET">
+    <input type="text" name="search" placeholder="Search by location">
+
+    <select name="property_type">
+        <option value="">All Types</option>
+        <option value="Residential">Residential</option>
+        <option value="Commercial">Commercial</option>
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for p in properties %}
+    <tr>
+        <td>{{ p.title }}</td>
+        <td>{{ p.location }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.property_type }}</td>
+        <td>
+            {% if p.image %}
+                <img src="{{ p.image.url }}" width="100">
+            {% else %}
+                No Image
+            {% endif %}
+        </td>
+        <td>
+            <a href="/properties/edit/{{ p.id }}/">Edit</a> |
+            <a href="/properties/delete/{{ p.id }}/">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No properties found</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

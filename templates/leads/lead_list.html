@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Leads</h2>
+
+<a href="/leads/add/">Add New Lead</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for lead in leads %}
+    <tr>
+        <td>{{ lead.name }}</td>
+        <td>{{ lead.phone }}</td>
+        <td>{{ lead.email }}</td>
+        <td>
+            <a href="/leads/edit/{{ lead.id }}/">Edit</a>
+            |
+            <a href="/leads/delete/{{ lead.id }}/">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No leads found</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
