@@ -4,39 +4,21 @@
 
 <h2>Properties</h2>
 
-<a href="/properties/add/">Add Property</a>
+<a class="btn btn-success mb-3" href="/properties/add/">Add Property</a>
 
-<br><br>
+<form method="GET" class="mb-3 d-flex gap-2">
+    <input class="form-control" type="text" name="search" placeholder="Search by location">
 
-<form method="GET">
-    <input type="text" name="search" placeholder="Search by location">
-
-    <select name="property_type">
+    <select class="form-control" name="property_type">
         <option value="">All Types</option>
         <option value="Residential">Residential</option>
         <option value="Commercial">Commercial</option>
     </select>
 
-    <button type="submit">Search</button>
+    <button class="btn btn-primary" type="submit">Search</button>
 </form>
 
-<br>
-
-<form method="GET">
-    <input type="text" name="search" placeholder="Search by location">
-
-    <select name="property_type">
-        <option value="">All Types</option>
-        <option value="Residential">Residential</option>
-        <option value="Commercial">Commercial</option>
-    </select>
-
-    <button type="submit">Search</button>
-</form>
-
-<br>
-
-<table border="1">
+<table class="table table-bordered table-striped">
     <tr>
         <th>Title</th>
         <th>Location</th>
@@ -60,8 +42,8 @@
             {% endif %}
         </td>
         <td>
-            <a href="/properties/edit/{{ p.id }}/">Edit</a> |
-            <a href="/properties/delete/{{ p.id }}/">Delete</a>
+            <a class="btn btn-warning btn-sm" href="/properties/edit/{{ p.id }}/">Edit</a>
+            <a class="btn btn-danger btn-sm" href="/properties/delete/{{ p.id }}/">Delete</a>
         </td>
     </tr>
     {% empty %}

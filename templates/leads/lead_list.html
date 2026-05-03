@@ -4,9 +4,9 @@
 
 <h2>Leads</h2>
 
-<a href="/leads/add/">Add New Lead</a>
+<a class="btn btn-success mb-3" href="/leads/add/">Add New Lead</a>
 
-<table border="1">
+<table class="table table-bordered table-striped">
     <tr>
         <th>Name</th>
         <th>Phone</th>
@@ -20,9 +20,8 @@
         <td>{{ lead.phone }}</td>
         <td>{{ lead.email }}</td>
         <td>
-            <a href="/leads/edit/{{ lead.id }}/">Edit</a>
-            |
-            <a href="/leads/delete/{{ lead.id }}/">Delete</a>
+            <a class="btn btn-warning btn-sm" href="/leads/edit/{{ lead.id }}/">Edit</a>
+            <a class="btn btn-danger btn-sm" href="/leads/delete/{{ lead.id }}/">Delete</a>
         </td>
     </tr>
     {% empty %}

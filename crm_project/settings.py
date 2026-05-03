@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1=^^=*@93digi%d**8v2^x$^n2d&-fsye5ifkty$&zhst=4sc@
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['real-estate-crm-z2ds.onrender.com']
+ALLOWED_HOSTS = ['real-estate-crm-z2ds.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
